@@ -122,7 +122,6 @@ button:hover{
 
 #input-fields{
     display: flex;
-    padding-right: 2rem;
 }
 
 #input-fields input{
@@ -131,11 +130,30 @@ button:hover{
     height: 1.5rem;
     font-size: 1.2rem;
     padding-left: 2rem;
+    width: max(15ch, 50%);
+    position: relative;
 }
 
-#input-fields div:first-child{
-    margin-right: 4rem;
+#input-fields > div:first-child{
+    width: max(30ch, 50%);
 }
+
+#input-fields > div:last-child{
+    width: max(30ch, 50%);
+}
+
+input:not(:placeholder-shown):invalid:not(:focus){
+    border: 2px solid red;
+}
+
+#input-fields input:invalid::before{
+    content: "✔";
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}
+
+
 
 #right p:last-child a{
     color: #c14cc9;
@@ -145,3 +163,4 @@ button:hover{
 #right p:last-child a:hover{
     font-weight: bold;
 }
+

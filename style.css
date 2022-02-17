@@ -131,29 +131,25 @@ button:hover{
     font-size: 1.2rem;
     padding-left: 2rem;
     width: max(15ch, 50%);
-    position: relative;
 }
 
-#input-fields > div:first-child{
-    width: max(30ch, 50%);
-}
-
-#input-fields > div:last-child{
+#input-fields > div:first-child, #input-fields > div:last-child{
     width: max(30ch, 50%);
 }
 
 input:not(:placeholder-shown):invalid:not(:focus){
-    border: 2px solid red;
+    border: 4px solid red;
+    background: url(./img/invalid.png) no-repeat;
+    background-size: 16px;
+    background-position: 6px center;
 }
 
-#input-fields input:invalid::before{
-    content: "✔";
-    width: 100px;
-    height: 100px;
-    position: absolute;
+input:not(:placeholder-shown):valid:not(:focus){
+    border: 4px solid rgb(0, 165, 36);
+    background: url(./img/valid.png) no-repeat;
+    background-size: 16px;
+    background-position: 6px center;
 }
-
-
 
 #right p:last-child a{
     color: #c14cc9;
